@@ -6,6 +6,7 @@ import 'package:flutter/widgets.dart';
 
 
 void main() {
+  Get.put(NavigationBarController());
   runApp(MyApp());
 }
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      initialBinding: HomeBinding(),
+      // initialBinding: HomeBinding(),
       home: Obx( () => Scaffold(
           appBar: AppBar(
             title: Text("Demo"),
@@ -97,13 +98,13 @@ class Widget1 extends StatelessWidget {
 }
 
 
-class HomeBinding extends Bindings {
-  @override
-  void dependencies() {
-     Get.lazyPut(() => NavigationBarController());
-  }
+// class HomeBinding extends Bindings {
+//   @override
+//   void dependencies() {
+//      Get.lazyPut(() => NavigationBarController());
+//   }
   
-}
+// }
 
 class Widget1_Bindings extends Bindings {
   @override
